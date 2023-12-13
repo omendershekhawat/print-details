@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print object</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="wrapper">
+        <input type="text" placeholder="Enter interation count"/>
+        <button>Start Iteration</button>
+        <p></p>
+    </div>
+    <script>
+        const input =document.querySelector("input");
+        const btn = document.querySelector("button");
+        const output = document.querySelector("p");
+
+        const person = {
+            name:"Omender Shekhawat",
+            age:21,
+            profession:"Full Stack Developer",
+            hometown:"Gudha",
+        };
+        const keys =Object.keys(person);
+        let i;
+         btn. addEventListener("click",showData);
+
+         function showData(){
+            const inputValue= input.value
+            if(inputValue === ""){
+                alert("hup")
+            }
+            else{
+                i= Number(input.value)
+            printrecursion();
+         }
+
+            }
+         
+
+         function printrecursion(){
+            output.innerHTML="";
+            let j = 0;
+             const interval = setInterval(()=> {
+                if(j=== keys.length){
+                    clearInterval(interval)
+
+                    if(--i>0)printrecursion();
+
+                    
+
+                }
+                else{
+                    output.innerHTML += person[keys[j++]]+"<br>"
+
+                }
+            },1000)
+
+         }
+
+     </script>
+ </body>
+ </html>
+    
+            
+    
+    </script>
+
+    
+</body>
+</html> 
+
+
+ 
